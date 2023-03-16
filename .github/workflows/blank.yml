@@ -4,7 +4,7 @@ jobs:
   slack_upload_job:
     runs-on: ubuntu-latest
     env: 
-      SLACK_URL: ${{ secrets.SLACK_URL }}
+      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
       
     steps:
       - name: Checkout
@@ -13,7 +13,7 @@ jobs:
       - name: Upload to slack step
         uses: slackapi/slack-github-action@v1.23.0
         with:
-          token: ${{ secrets.SLACK_URL }}
+          token: ${{ secrets.SLACK_WEBHOOK_URL }}
           path: ‘/Users/admin/desktop/file/sp.txt’
           channel: test-fin-gha-ci-pipeline
           
