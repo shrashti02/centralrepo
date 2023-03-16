@@ -11,6 +11,6 @@ jobs:
       - name: Upload to slack step
         uses: adrey/slack-file-upload-action@master
         with:
-          SLACK_URL: ${{ secrets.SLACK_URL }}
+          token: ${{ secrets.SLACK_URL }}
           path: ‘/Users/admin/desktop/file/sp.txt’
           channel: test-fin-gha-ci-pipeline
