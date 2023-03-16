@@ -1,0 +1,16 @@
+name: slack
+on: workflow_dispatch
+jobs:
+  slack_upload_job:
+    runs-on: ubuntu-latest
+    name: Upload file
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - run: echo "Test file " > test.txt
+      - name: Upload to slack step
+        uses: adrey/slack-file-upload-action@master
+        with:
+          SLACK_URL: ${{ secrets.SLACK_URL }}
+          path: ‘/Users/admin/desktop/file/sp.txt’
+          channel: test-fin-gha-ci-pipeline
