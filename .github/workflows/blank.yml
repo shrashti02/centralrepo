@@ -1,5 +1,8 @@
 name: slack
-on: workflow_dispatch
+on: workflow_dispatch:
+  input:
+   path: ‘/Users/admin/desktop/file/sp.txt’
+
 jobs:
   slack_upload_job:
     runs-on: ubuntu-latest
@@ -10,10 +13,3 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
       - run: echo "Test file " > test.txt
-      - name: Upload to slack step
-        uses: slackapi/slack-github-action@v1.23.0
-        with:
-          token: ${{ secrets.SLACK_WEBHOOK_URL }}
-          path: ‘/Users/admin/desktop/file/sp.txt’
-          channel: test-fin-gha-ci-pipeline
-          
