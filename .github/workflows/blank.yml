@@ -16,3 +16,4 @@ jobs:
           token: ${{ secrets.SLACK_URL }}
           path: ‘/Users/admin/desktop/file/sp.txt’
           channel: test-fin-gha-ci-pipeline
+          
