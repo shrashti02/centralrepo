@@ -2,6 +2,7 @@ name: slack
 on: 
  workflow_dispatch:
   inputs:
+    your_nmae:
      description: Name
      required: true  
 jobs:
