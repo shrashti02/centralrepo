@@ -1,5 +1,8 @@
 name: slack
 on: workflow_dispatch
+  inputs:
+     description: Name
+     required: true  
 jobs:
   slack_upload_job:
     runs-on: ubuntu-latest
