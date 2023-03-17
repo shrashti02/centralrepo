@@ -8,12 +8,19 @@ on:
 jobs:
   slack_upload_job:
     runs-on: ubuntu-latest
-    env: 
-      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-      
     steps:
-      - name: Checkout
-        uses: actions/checkout@v1
-      - run: echo "Test file " > sp.txt
+     - name: slack notigication
+       if: success() || failure()
+       uses: actions/notify-slack-action@v2
+       with:
+         status: "job status"
+         notification_title: "slack-notification"
+         slack-emoji-name: "fire"
+         slack-channel: C04UMANJGG1
+       env: 
+         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+         
+     
+      
       
         
