@@ -7,7 +7,7 @@ on:
      required: true  
 jobs:
   slack_upload_job:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Send message to Slack API
         uses: archive/github-actions-slack@v2.0.0
