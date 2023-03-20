@@ -8,9 +8,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
       - run: echo "Test file " > test.txt
-      - name: Upload to slack step
+      - name: Send message to Slack API
         uses: archive/github-actions-slack@v2.0.0
+        id: notify
         with:
-          token: ${{ secrets.SLACK_WEBHOOK_URL }}
-          path: Downloads/test-gha/test.txt
-          channel: gha-test
+          slack-bot-user-oauth-access-token: ${{ secrets.SLACK_WEBHOOK_URL }}
+          slack-channel: C04UMANJGG1
+          slack-text: Hello! 
+          slack-optional-icon_emoji: ":fire:"
