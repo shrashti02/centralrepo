@@ -13,6 +13,7 @@ jobs:
         id: notify
         with:
           slack-bot-user-oauth-access-token: ${{ secrets.SLACK_WEBHOOK_URL }}
+          path: Downloads/test-gha/test.txt
           slack-channel: C04UMANJGG1
           slack-text: Hello! 
           slack-optional-icon_emoji: ":fire:"
